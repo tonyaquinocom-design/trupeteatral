@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nosso Trabalho - Trupe Teatral</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    padding: 22px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #080808;
+
+    border-bottom: 1px solid #252525;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 23px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #d4af37;
+}
+
+nav {
+    display: flex;
+
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    padding: 80px 7% 70px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #252525,
+            #080808 70%
+        );
+}
+
+.hero .icone {
+
+    font-size: 60px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+
+    font-size: clamp(40px, 6vw, 65px);
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+
+    color: #d4af37;
+}
+
+.hero p {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #aaa;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   HISTÓRIA
+========================= */
+
+.historia {
+
+    padding: 75px 7%;
+
+    background: #0d0d0d;
+}
+
+.container {
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.titulo {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.titulo pequeno {
+
+    color: #d4af37;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.titulo h2 {
+
+    font-size: 38px;
+
+    margin-top: 12px;
+}
+
+.historia-texto {
+
+    color: #aaa;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    text-align: center;
+}
+
+.historia-texto strong {
+
+    color: white;
+}
+
+
+/* =========================
+   LINHA DO TEMPO
+========================= */
+
+.trabalhos {
+
+    padding: 80px 7%;
+
+    background: #111;
+}
+
+.timeline {
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.trabalho {
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+    margin-bottom: 35px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.trabalho:hover {
+
+    border-color: #d4af37;
+
+    transform: translateY(-4px);
+}
+
+.trabalho-topo {
+
+    padding: 25px 30px;
+
+    border-bottom: 1px solid #292929;
+
+    background: #191919;
+}
+
+.ano {
+
+    color: #d4af37;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.trabalho h3 {
+
+    font-size: 30px;
+}
+
+.trabalho-conteudo {
+
+    padding: 30px;
+}
+
+.informacoes {
+
+    color: #d4af37;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.descricao {
+
+    color: #aaa;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+.descricao strong {
+
+    color: white;
+}
+
+.descricao em {
+
+    color: #ddd;
+}
+
+
+/* =========================
+   FOTOS
+========================= */
+
+.galeria {
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.galeria img {
+
+    width: 100%;
+
+    height: 210px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+
+    border: 1px solid #292929;
+
+    transition: 0.3s;
+}
+
+.galeria img:hover {
+
+    transform: scale(1.03);
+
+    border-color: #d4af37;
+}
+
+
+/* =========================
+   LEMA
+========================= */
+
+.lema {
+
+    padding: 80px 7%;
+
+    text-align: center;
+
+    background: #0d0d0d;
+}
+
+.lema .aspas {
+
+    color: #d4af37;
+
+    font-size: 60px;
+
+    line-height: 1;
+}
+
+.lema blockquote {
+
+    max-width: 800px;
+
+    margin: 20px auto;
+
+    color: white;
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    line-height: 1.6;
+}
+
+.lema p {
+
+    color: #777;
+
+    margin-top: 15px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+
+    padding: 40px 7%;
+
+    text-align: center;
+
+    border-top: 1px solid #252525;
+
+    color: #777;
+}
+
+footer strong {
+
+    color: #d4af37;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .historia,
+    .trabalhos,
+    .lema {
+        padding: 60px 5%;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria img {
+        height: 230px;
+    }
+
+    .trabalho-conteudo {
+        padding: 22px;
+    }
+
+    .trabalho h3 {
+        font-size: 25px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header>
+
+    <div class="logo">
+
+        TRUPE <span>TEATRAL</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Início
+        </a>
+
+        <a href="trupe.html">
+            Trupe Teatral
+        </a>
+
+        <a href="espetaculos.html">
+            Espetáculos
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="icone">
+        🎬
+    </div>
+
+    <h1>
+
+        Nosso <span>Trabalho</span>
+
+    </h1>
+
+    <p>
+
+        Conheça a trajetória da Trupe Teatral,
+        nossos espetáculos e algumas das
+        apresentações que marcaram nossa história.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     HISTÓRIA
+========================= -->
+
+<section class="historia">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <pequeno>
+                NOSSA HISTÓRIA
+            </pequeno>
+
+            <h2>
+                Arte que transforma
+            </h2>
+
+        </div>
+
+
+        <div class="historia-texto">
+
+            <p>
+
+                A <strong>Trupe Teatral</strong> foi criada
+                em Livramento de Nossa Senhora, Bahia,
+                por <strong>Tonny Aquino</strong>,
+                também conhecido como Antônio de Aquino Azevedo.
+
+            </p>
+
+            <br>
+
+            <p>
+
+                O grupo iniciou sua trajetória em
+                <strong>outubro de 2021</strong>, com a
+                apresentação de <em>Os Três Porquinhos</em>,
+                dando início a um trabalho voltado ao
+                teatro, à cultura e à formação de público.
+
+            </p>
+
+            <br>
+
+            <p>
+
+                Desde então, a Trupe vem desenvolvendo
+                espetáculos que procuram levar ao público
+                entretenimento, emoção, reflexão e
+                mensagens que possam contribuir para
+                a transformação humana através da arte.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     TRABALHOS
+========================= -->
+
+<section class="trabalhos">
+
+    <div class="titulo">
+
+        <pequeno>
+            NOSSA TRAJETÓRIA
+        </pequeno>
+
+        <h2>
+            Espetáculos realizados
+        </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <!-- =====================
+             OS TRÊS PORQUINHOS
+        ====================== -->
+
+        <article class="trabalho">
+
+            <div class="trabalho-topo">
+
+                <div class="ano">
+                    2021
+                </div>
+
+                <h3>
+                    Os Três Porquinhos
+                </h3>
+
+            </div>
+
+
+            <div class="trabalho-conteudo">
+
+                <div class="informacoes">
+
+                    📅 Outubro de 2021
+                    <br>
+
+                    📍 Centro Diocesano —
+                    Livramento de Nossa Senhora
+
+                </div>
+
+
+                <div class="descricao">
+
+                    <p>
+
+                        O espetáculo <strong>Os Três
+                        Porquinhos</strong> marcou a estreia
+                        da Trupe Teatral em Livramento de
+                        Nossa Senhora.
+
+                    </p>
+
+                    <br>
+
+                    <p>
+
+                        As apresentações aconteceram nos
+                        dias <strong>10 e 12 de outubro de
+                        2021</strong>, sob direção de
+                        <strong>Tonny Aquino</strong>.
+
+                    </p>
+
+                    <br>
+
+                    <p>
+
+                        O elenco da apresentação inaugural
+                        foi formado por <strong>Alan Pina,
+                        Lakshmi Andrade, Marco Prado e
+                        Valquíria Santos</strong>.
+
+                    </p>
+
+                    <br>
+
+                    <p>
+
+                        A estreia marcou o início da trajetória
+                        da Trupe, que nasceu com o propósito
+                        de levar cultura e arte ao público
+                        através do teatro.
+
+                    </p>
+
+                </div>
+
+
+                <!-- FOTOS -->
+
+                <div class="galeria">
+
+                    <img
+                        src="fotos/2021/outubro/foto-5.jpg"
+                        alt="Os Três Porquinhos">
+
+                    <img
+                        src="fotos/2021/outubro/foto-3.jpg"
+                        alt="Os Três Porquinhos">
+
+                    <img
+                        src="fotos/2021/outubro/foto-2a.jpg"
+                        alt="Os Três Porquinhos">
+
+                    <img
+                        src="fotos/2021/outubro/foto-6.jpg"
+                        alt="Os Três Porquinhos">
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================
+             NATAL
+        ====================== -->
+
+        <article class="trabalho">
+
+            <div class="trabalho-topo">
+
+                <div class="ano">
+                    2021
+                </div>
+
+                <h3>
+                    Natal — Um Canto de Luz e Esperança
+                </h3>
+
+            </div>
+
+
+            <div class="trabalho-conteudo">
+
+                <div class="informacoes">
+
+                    📅 Dezembro de 2021
+                    <br>
+
+                    📍 Gruta do Bom Jesus do Taquari
+                    <br>
+
+                    📍 Catedral de Nossa Senhora do Livramento
+
+                </div>
+
+
+                <div class="descricao">
+
+                    <p>
+
+                        Em dezembro de 2021, a Trupe Teatral,
+                        juntamente com o <strong>Grupo de
+                        Oração Mãe da Divina Providência</strong>,
+                        da Renovação Carismática Católica,
+                        apresentou o espetáculo
+                        <strong>Natal — Um Canto de Luz e
+                        Esperança</strong>.
+
+                    </p>
+
+                    <br>
+
+                    <p>
+
+                        As apresentações aconteceram na
+                        <strong>Gruta do Bom Jesus do
+                        Taquari</strong> e na
+                        <strong>Catedral de Nossa Senhora
+                        do Livramento</strong>.
+
+                    </p>
+
+                    <br>
+
+                    <p>
+
+                        O projeto buscou transmitir mensagens
+                        de amor, esperança, fé e confiança
+                        na vida, utilizando a arte como
+                        instrumento de transformação e
+                        evangelização.
+
+                    </p>
+
+                    <br>
+
+                    <p>
+
+                        Durante o projeto, também foi
+                        solicitada a doação de
+                        <strong>1 kg de alimento não
+                        perecível</strong>, destinado à
+                        ação social.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =====================
+             PASSOS DA PAIXÃO
+        ====================== -->
+
+        <article class="trabalho">
+
+            <div class="trabalho-topo">
+
+                <div class="ano">
+                    2022
+                </div>
+
+                <h3>
+                    Passos da Paixão
+                </h3>
+
+            </div>
+
+
+            <div class="trabalho-conteudo">
+
+                <div class="informacoes">
+
+                    📅 Sexta-Feira Santa — 2022
+                    <br>
+
+                    📍 Praça da Catedral —
+                    Livramento de Nossa Senhora
+
+                </div>
+
+
+                <div class="descricao">
+
+                    <p>
+
+                        O espetáculo
+                        <strong>Passos da Paixão</strong>
+                        apresentou ao público o drama
+                        da Paixão e morte de Jesus Cristo,
+                        através de uma interpretação teatral
+                        marcada pelo realismo e pela emoção.
+
+                    </p>
+
+                    <br>
+
+                    <p>
+
+                        Sob direção geral de
+                        <strong>Tonny Aquino</strong>,
+                        a apresentação buscou transmitir
+                        mensagens de <strong>amor,
+                        esperança, fé e perdão</strong>.
+
+                    </p>
+
+                    <br>
+
+                    <p>
+
+                        A apresentação reuniu um grande
+                        público na praça da Catedral,
+                        proporcionando uma experiência
+                        artística e de reflexão.
+
+                    </p>
+
+                </div>
+
+
+                <!-- FOTOS -->
+
+                <div class="galeria">
+
+                    <img
+                        src="fotos/2022/abril/psicso_cristo/IMG_0839.jpg"
+                        alt="Passos da Paixão">
+
+                    <img
+                        src="fotos/2022/abril/psicso_cristo/IMG_0953.jpg"
+                        alt="Passos da Paixão">
+
+                    <img
+                        src="fotos/2022/abril/psicso_cristo/IMG_0919.jpg"
+                        alt="Passos da Paixão">
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     LEMA
+========================= -->
+
+<section class="lema">
+
+    <div class="aspas">
+        “
+    </div>
+
+    <blockquote>
+
+        Evangelizar através da arte e da cultura,
+        ainda que em pequenos, mas determinantes passos.
+
+    </blockquote>
+
+    <p>
+        — Tonny Aquino
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+    <p>
+
+        <strong>
+            TRUPE TEATRAL
+        </strong>
+
+        © 2026
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Arte • Cultura • Diversão
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

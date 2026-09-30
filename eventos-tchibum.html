@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Eventos - TchiBum Recreação</title>
+
+<style>
+
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #05070a;
+    color: white;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+
+    padding: 22px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: rgba(5, 7, 10, 0.96);
+
+    border-bottom: 1px solid #18232b;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+
+    color: #168cff;
+}
+
+nav {
+
+    display: flex;
+
+    gap: 28px;
+}
+
+nav a {
+
+    color: #ddd;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+
+    color: #168cff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 7%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(0, 119, 255, 0.20),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(0, 220, 130, 0.08),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 115, 0, 0.08),
+            transparent 30%
+        ),
+
+        #05070a;
+}
+
+.hero-content {
+
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero .icone {
+
+    font-size: 70px;
+
+    margin-bottom: 25px;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(22, 140, 255, 0.4)
+        );
+}
+
+.hero pequeno {
+
+    color: #168cff;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.hero h1 {
+
+    font-size: clamp(
+        45px,
+        7vw,
+        78px
+    );
+
+    margin: 20px 0;
+}
+
+.hero h1 span {
+
+    color: #168cff;
+
+    text-shadow:
+        0 0 25px
+        rgba(22, 140, 255, 0.35);
+}
+
+.hero p {
+
+    color: #999;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    max-width: 760px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   EVENTOS
+========================= */
+
+.eventos {
+
+    padding: 90px 7%;
+
+    background: #080b0f;
+}
+
+.titulo {
+
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.titulo pequeno {
+
+    color: #168cff;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.titulo h2 {
+
+    font-size: 42px;
+
+    margin-top: 14px;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.lista-eventos {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================
+   CARD DO EVENTO
+========================= */
+
+.evento {
+
+    background:
+        linear-gradient(
+            145deg,
+            #12171c,
+            #090c10
+        );
+
+    border: 1px solid #1d2932;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: 0.35s;
+}
+
+.evento:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #168cff;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================
+   FOTO
+========================= */
+
+.foto {
+
+    width: 100%;
+
+    height: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #18232b,
+            #080b0f
+        );
+
+    color: #168cff;
+
+    font-size: 60px;
+}
+
+.foto img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo {
+
+    padding: 30px;
+}
+
+.data {
+
+    color: #168cff;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+.conteudo h3 {
+
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.conteudo p {
+
+    color: #999;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.botao {
+
+    display: inline-block;
+
+    padding: 13px 21px;
+
+    background: #168cff;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+
+    background: #35a2ff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque {
+
+    padding: 90px 7%;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(22, 140, 255, 0.10),
+            transparent 50%
+        ),
+
+        #05070a;
+}
+
+.destaque h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.destaque p {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #999;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+
+    padding: 45px 7%;
+
+    border-top: 1px solid #18232b;
+
+    text-align: center;
+
+    color: #666;
+
+    background: #030507;
+}
+
+footer strong {
+
+    color: #168cff;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        display: none;
+    }
+
+    .lista-eventos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .hero {
+
+        min-height: 450px;
+
+        padding: 60px 5%;
+
+    }
+
+    .hero h1 {
+
+        font-size: 50px;
+
+    }
+
+    .hero p {
+
+        font-size: 16px;
+
+    }
+
+    .eventos {
+
+        padding: 65px 5%;
+
+    }
+
+    .titulo h2 {
+
+        font-size: 34px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header>
+
+    <div class="logo">
+
+        TCHIBUM <span>RECREAÇÃO</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Início
+        </a>
+
+        <a href="tchibum.html">
+            TchiBum
+        </a>
+
+        <a href="servicos.html">
+            Serviços
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="icone">
+
+            🎉
+
+        </div>
+
+
+        <pequeno>
+
+            TCHIBUM RECREAÇÃO
+
+        </pequeno>
+
+
+        <h1>
+
+            Nossos <span>Eventos</span>
+
+        </h1>
+
+
+        <p>
+
+            Momentos de alegria, diversão e
+            criatividade que já vivemos junto
+            com crianças, famílias e empresas.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     LISTA DE EVENTOS
+========================= -->
+
+<section class="eventos">
+
+
+    <div class="titulo">
+
+        <pequeno>
+
+            EXPERIÊNCIAS REALIZADAS
+
+        </pequeno>
+
+
+        <h2>
+
+            Eventos que já fizemos
+
+        </h2>
+
+    </div>
+
+
+
+    <div class="lista-eventos">
+
+
+        <!-- =====================
+             EVENTO 1
+        ====================== -->
+
+        <article class="evento">
+
+
+            <div class="foto">
+
+                🎈
+
+            </div>
+
+
+            <div class="conteudo">
+
+                <div class="data">
+
+                    EVENTO
+
+                </div>
+
+
+                <h3>
+
+                    Em breve
+
+                </h3>
+
+
+                <p>
+
+                    Aqui vamos apresentar
+                    detalhes de um dos eventos
+                    realizados pela TchiBum
+                    Recreação.
+
+                </p>
+
+
+                <a
+                    href="#"
+                    class="botao">
+
+                    VER EVENTO
+
+                </a>
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- =====================
+             EVENTO 2
+        ====================== -->
+
+        <article class="evento">
+
+
+            <div class="foto">
+
+                🎨
+
+            </div>
+
+
+            <div class="conteudo">
+
+                <div class="data">
+
+                    EVENTO
+
+                </div>
+
+
+                <h3>
+
+                    Em breve
+
+                </h3>
+
+
+                <p>
+
+                    Mais experiências, festas
+                    e eventos realizados pela
+                    TchiBum serão adicionados
+                    aqui.
+
+                </p>
+
+
+                <a
+                    href="#"
+                    class="botao">
+
+                    VER EVENTO
+
+                </a>
+
+            </div>
+
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     DESTAQUE
+========================= -->
+
+<section class="destaque">
+
+    <h2>
+
+        Cada evento vira uma memória.
+
+    </h2>
+
+
+    <p>
+
+        A TchiBum Recreação leva alegria,
+        criatividade e interação para
+        diferentes tipos de eventos,
+        criando momentos especiais
+        para crianças e famílias.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+    <p>
+
+        <strong>
+            TCHIBUM RECREAÇÃO
+        </strong>
+
+        © 2026
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Diversão • Criatividade • Alegria
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Comprar Ingressos - Os Saltimbancos</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+header {
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #080808;
+    border-bottom: 1px solid #252525;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #d4af37;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+.pagina {
+    padding: 60px 7% 90px;
+    background: #0d0d0d;
+    min-height: 80vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.icone {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.titulo h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.titulo h1 span {
+    color: #d4af37;
+}
+
+.titulo p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.caixa {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.caixa h2 {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.evento {
+    margin-bottom: 30px;
+}
+
+.evento h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.informacoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.informacao {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.informacao strong {
+    display: block;
+    color: #d4af37;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.ingresso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #101010;
+    border: 1px solid #292929;
+    border-radius: 7px;
+}
+
+.ingresso:last-child {
+    margin-bottom: 0;
+}
+
+.ingresso h3 {
+    margin-bottom: 7px;
+}
+
+.ingresso p {
+    color: #888;
+    font-size: 14px;
+}
+
+.valor {
+    color: #d4af37;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.quantidade {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantidade button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 4px;
+    background: #d4af37;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.quantidade button:hover {
+    background: white;
+}
+
+.quantidade span {
+    min-width: 25px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.campo input {
+    width: 100%;
+    padding: 14px;
+    background: #0d0d0d;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.campo input:focus {
+    border-color: #d4af37;
+}
+
+.resumo {
+    background: #101010;
+    border: 1px solid #292929;
+    border-radius: 7px;
+    padding: 25px;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    color: #aaa;
+}
+
+.total {
+    border-top: 1px solid #333;
+    padding-top: 18px;
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.total strong {
+    color: #d4af37;
+}
+
+.botao {
+    width: 100%;
+    margin-top: 25px;
+    padding: 17px;
+    border: none;
+    border-radius: 5px;
+    background: #d4af37;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background: white;
+}
+
+.pix {
+    display: none;
+    text-align: center;
+}
+
+.pix h2 {
+    margin-bottom: 10px;
+}
+
+.pix p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.qr {
+    background: white;
+    width: 280px;
+    height: 280px;
+    margin: 25px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.qr img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.valor-pix {
+    font-size: 30px;
+    color: #d4af37;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.codigo-pix {
+    width: 100%;
+    padding: 14px;
+    background: #0d0d0d;
+    color: #aaa;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-top: 15px;
+    word-break: break-all;
+}
+
+.copiar {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 5px;
+    background: #d4af37;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.copiar:hover {
+    background: white;
+}
+
+.voltar {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #888;
+    text-decoration: none;
+}
+
+.voltar:hover {
+    color: #d4af37;
+}
+
+footer {
+    padding: 40px 7%;
+    text-align: center;
+    border-top: 1px solid #252525;
+    color: #777;
+}
+
+footer strong {
+    color: #d4af37;
+}
+
+@media (max-width: 700px) {
+
+    nav {
+        display: none;
+    }
+
+    .informacoes {
+        grid-template-columns: 1fr;
+    }
+
+    .ingresso {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .titulo h1 {
+        font-size: 38px;
+    }
+
+    .qr {
+        width: 240px;
+        height: 240px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+
+        TRUPE <span>TEATRAL</span>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Início
+        </a>
+
+        <a href="trupe.html">
+            Trupe
+        </a>
+
+        <a href="espetaculos.html">
+            Espetáculos
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<section class="pagina">
+
+
+<div class="container">
+
+
+    <div class="titulo">
+
+        <div class="icone">
+            🎟️
+        </div>
+
+        <h1>
+
+            Comprar <span>Ingressos</span>
+
+        </h1>
+
+        <p>
+
+            Garanta sua entrada para
+            Os Saltimbancos.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- EVENTO -->
+
+    <div class="caixa evento">
+
+        <h2>
+
+            🎭 OS SALTIMBANCOS
+
+        </h2>
+
+
+        <div class="informacoes">
+
+
+            <div class="informacao">
+
+                <strong>
+                    DATA
+                </strong>
+
+                11/10/2026
+
+            </div>
+
+
+            <div class="informacao">
+
+                <strong>
+                    HORÁRIO
+                </strong>
+
+                16h
+
+            </div>
+
+
+            <div class="informacao">
+
+                <strong>
+                    LOCAL
+                </strong>
+
+                Centro Diocesano
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ESCOLHA DOS INGRESSOS -->
+
+    <div class="caixa" id="areaCompra">
+
+        <h2>
+
+            Escolha seus ingressos
+
+        </h2>
+
+
+        <div class="ingresso">
+
+            <div>
+
+                <h3>
+                    Inteira
+                </h3>
+
+                <p>
+                    Ingresso no valor integral
+                </p>
+
+            </div>
+
+
+            <div class="valor">
+
+                R$ 20,00
+
+            </div>
+
+
+            <div class="quantidade">
+
+                <button onclick="alterar('inteira', -1)">
+                    −
+                </button>
+
+                <span id="qtd-inteira">
+                    0
+                </span>
+
+                <button onclick="alterar('inteira', 1)">
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="ingresso">
+
+            <div>
+
+                <h3>
+                    Meia-entrada
+                </h3>
+
+                <p>
+                    Para quem possui direito à meia-entrada
+                </p>
+
+            </div>
+
+
+            <div class="valor">
+
+                R$ 10,00
+
+            </div>
+
+
+            <div class="quantidade">
+
+                <button onclick="alterar('meia', -1)">
+                    −
+                </button>
+
+                <span id="qtd-meia">
+                    0
+                </span>
+
+                <button onclick="alterar('meia', 1)">
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- DADOS DO COMPRADOR -->
+
+    <div class="caixa" id="dados">
+
+        <h2>
+
+            Seus dados
+
+        </h2>
+
+
+        <div class="campo">
+
+            <label>
+                Nome completo
+            </label>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite seu nome">
+
+        </div>
+
+
+        <div class="campo">
+
+            <label>
+                E-mail
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Digite seu e-mail">
+
+        </div>
+
+
+        <div class="campo">
+
+            <label>
+                Telefone
+            </label>
+
+            <input
+                type="tel"
+                id="telefone"
+                placeholder="(00) 00000-0000">
+
+        </div>
+
+    </div>
+
+
+
+    <!-- RESUMO DA COMPRA -->
+
+    <div class="caixa" id="resumoCompra">
+
+        <h2>
+
+            Resumo da compra
+
+        </h2>
+
+
+        <div class="resumo">
+
+            <div class="linha">
+
+                <span>
+                    Ingressos inteiros
+                </span>
+
+                <span id="subtotal-inteira">
+                    R$ 0,00
+                </span>
+
+            </div>
+
+
+            <div class="linha">
+
+                <span>
+                    Meias-entradas
+                </span>
+
+                <span id="subtotal-meia">
+                    R$ 0,00
+                </span>
+
+            </div>
+
+
+            <div class="total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="total">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="botao"
+            onclick="continuarCompra()">
+
+            CONTINUAR PARA PAGAMENTO
+
+        </button>
+
+    </div>
+
+
+
+    <!-- PAGAMENTO PIX -->
+
+    <div class="caixa pix" id="pagamentoPix">
+
+        <h2>
+
+            💚 Pagamento via Pix
+
+        </h2>
+
+
+        <p>
+
+            Escaneie o QR Code abaixo
+            usando o aplicativo do seu banco.
+
+        </p>
+
+
+        <div class="valor-pix" id="valorPix">
+
+            R$ 0,00
+
+        </div>
+
+
+        <div class="qr">
+
+            <img
+                id="qrCode"
+                alt="QR Code Pix">
+
+        </div>
+
+
+        <p>
+
+            Ou copie o código Pix abaixo:
+
+        </p>
+
+
+        <div
+            class="codigo-pix"
+            id="codigoPix">
+
+        </div>
+
+
+        <button
+            class="copiar"
+            onclick="copiarPix()">
+
+            📋 COPIAR CÓDIGO PIX
+
+        </button>
+
+
+        <p style="margin-top:25px;">
+
+            Após realizar o pagamento,
+            aguarde a confirmação.
+
+        </p>
+
+    </div>
+
+
+
+    <a
+        href="espetaculo-1.html"
+        class="voltar">
+
+        ← Voltar para o espetáculo
+
+    </a>
+
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+    <p>
+
+        <strong>
+            TRUPE TEATRAL
+        </strong>
+
+        © 2026
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Arte • Cultura • Diversão
+
+    </p>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================
+   CONFIGURAÇÃO DO PIX
+========================================= */
+
+/*
+   SUA CHAVE PIX É O CNPJ:
+
+   47.347.316/0001-18
+
+   No código Pix usamos somente números.
+*/
+
+const CHAVE_PIX = "47347316000118";
+
+
+/*
+   Nome do recebedor.
+
+   ATENÇÃO:
+   O nome que aparecerá no banco deve
+   corresponder aos dados cadastrados
+   para essa chave Pix.
+*/
+
+const NOME_RECEBEDOR = "TRUPE TEATRAL";
+
+
+/*
+   Cidade do recebedor.
+*/
+
+const CIDADE_RECEBEDOR = "ABAÍRA";
+
+
+/* =========================================
+   PREÇOS DOS INGRESSOS
+========================================= */
+
+const precoInteira = 20;
+
+const precoMeia = 10;
+
+let inteira = 0;
+
+let meia = 0;
+
+
+/* =========================================
+   ALTERAR QUANTIDADE
+========================================= */
+
+function alterar(tipo, valor) {
+
+    if (tipo === "inteira") {
+
+        inteira += valor;
+
+        if (inteira < 0) {
+
+            inteira = 0;
+
+        }
+
+    }
+
+
+    if (tipo === "meia") {
+
+        meia += valor;
+
+        if (meia < 0) {
+
+            meia = 0;
+
+        }
+
+    }
+
+
+    atualizar();
+
+}
+
+
+/* =========================================
+   ATUALIZAR VALORES
+========================================= */
+
+function atualizar() {
+
+    document.getElementById(
+        "qtd-inteira"
+    ).textContent = inteira;
+
+
+    document.getElementById(
+        "qtd-meia"
+    ).textContent = meia;
+
+
+    const subtotalInteira =
+        inteira * precoInteira;
+
+
+    const subtotalMeia =
+        meia * precoMeia;
+
+
+    const total =
+        subtotalInteira + subtotalMeia;
+
+
+    document.getElementById(
+        "subtotal-inteira"
+    ).textContent =
+        formatarMoeda(subtotalInteira);
+
+
+    document.getElementById(
+        "subtotal-meia"
+    ).textContent =
+        formatarMoeda(subtotalMeia);
+
+
+    document.getElementById(
+        "total"
+    ).textContent =
+        formatarMoeda(total);
+
+}
+
+
+/* =========================================
+   FORMATAR MOEDA
+========================================= */
+
+function formatarMoeda(valor) {
+
+    return valor.toLocaleString(
+        "pt-BR",
+        {
+            style: "currency",
+            currency: "BRL"
+        }
+    );
+
+}
+
+
+/* =========================================
+   CONTINUAR PARA PAGAMENTO
+========================================= */
+
+function continuarCompra() {
+
+    const nome =
+        document.getElementById(
+            "nome"
+        ).value.trim();
+
+
+    const email =
+        document.getElementById(
+            "email"
+        ).value.trim();
+
+
+    const telefone =
+        document.getElementById(
+            "telefone"
+        ).value.trim();
+
+
+    const total =
+        (inteira * precoInteira) +
+        (meia * precoMeia);
+
+
+    if (inteira === 0 && meia === 0) {
+
+        alert(
+            "Escolha pelo menos um ingresso."
+        );
+
+        return;
+
+    }
+
+
+    if (nome === "") {
+
+        alert(
+            "Digite seu nome completo."
+        );
+
+        return;
+
+    }
+
+
+    if (email === "") {
+
+        alert(
+            "Digite seu e-mail."
+        );
+
+        return;
+
+    }
+
+
+    if (telefone === "") {
+
+        alert(
+            "Digite seu telefone."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Gera o código Pix
+    */
+
+    const codigoPix =
+        gerarPix(
+            CHAVE_PIX,
+            NOME_RECEBEDOR,
+            CIDADE_RECEBEDOR,
+            total
+        );
+
+
+    /*
+       Mostra o valor
+    */
+
+    document.getElementById(
+        "valorPix"
+    ).textContent =
+        formatarMoeda(total);
+
+
+    /*
+       Mostra o código copia e cola
+    */
+
+    document.getElementById(
+        "codigoPix"
+    ).textContent =
+        codigoPix;
+
+
+    /*
+       Gera o QR Code
+    */
+
+    const urlQR =
+        "https://quickchart.io/qr?size=300&text=" +
+        encodeURIComponent(codigoPix);
+
+
+    document.getElementById(
+        "qrCode"
+    ).src = urlQR;
+
+
+    /*
+       Esconde a parte da compra
+    */
+
+    document.getElementById(
+        "areaCompra"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "dados"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "resumoCompra"
+    ).style.display = "none";
+
+
+    /*
+       Mostra o Pix
+    */
+
+    document.getElementById(
+        "pagamentoPix"
+    ).style.display = "block";
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* =========================================
+   COPIAR CÓDIGO PIX
+========================================= */
+
+function copiarPix() {
+
+    const codigo =
+        document.getElementById(
+            "codigoPix"
+        ).textContent;
+
+
+    navigator.clipboard.writeText(codigo)
+
+        .then(function() {
+
+            alert(
+                "Código Pix copiado!"
+            );
+
+        })
+
+        .catch(function() {
+
+            alert(
+                "Não foi possível copiar automaticamente. Selecione o código e copie."
+            );
+
+        });
+
+}
+
+
+/* =========================================
+   GERAR PIX
+========================================= */
+
+function gerarPix(
+    chave,
+    nome,
+    cidade,
+    valor
+) {
+
+    nome =
+        removerAcentos(nome)
+        .substring(0, 25);
+
+
+    cidade =
+        removerAcentos(cidade)
+        .substring(0, 15);
+
+
+    let payload = "";
+
+
+    /*
+       Identificação do Pix
+    */
+
+    payload += campo(
+        "00",
+        "01"
+    );
+
+
+    /*
+       Chave Pix
+    */
+
+    payload += campo(
+
+        "26",
+
+        campo(
+            "00",
+            "br.gov.bcb.pix"
+        )
+
+        +
+
+        campo(
+            "01",
+            chave
+        )
+
+    );
+
+
+    /*
+       Categoria
+    */
+
+    payload += campo(
+        "52",
+        "0000"
+    );
+
+
+    /*
+       Moeda brasileira
+    */
+
+    payload += campo(
+        "53",
+        "986"
+    );
+
+
+    /*
+       Valor
+    */
+
+    payload += campo(
+        "54",
+        valor.toFixed(2)
+    );
+
+
+    /*
+       País
+    */
+
+    payload += campo(
+        "58",
+        "BR"
+    );
+
+
+    /*
+       Nome
+    */
+
+    payload += campo(
+        "59",
+        nome
+    );
+
+
+    /*
+       Cidade
+    */
+
+    payload += campo(
+        "60",
+        cidade
+    );
+
+
+    /*
+       Identificador da transação
+    */
+
+    payload += campo(
+
+        "62",
+
+        campo(
+            "05",
+            "***"
+        )
+
+    );
+
+
+    /*
+       CRC
+    */
+
+    payload += "6304";
+
+
+    const crc =
+        crc16(payload);
+
+
+    payload += crc;
+
+
+    return payload;
+
+}
+
+
+/* =========================================
+   CAMPO PIX
+========================================= */
+
+function campo(id, valor) {
+
+    return (
+
+        id +
+
+        String(valor.length)
+            .padStart(2, "0") +
+
+        valor
+
+    );
+
+}
+
+
+/* =========================================
+   REMOVER ACENTOS
+========================================= */
+
+function removerAcentos(texto) {
+
+    return texto
+        .normalize("NFD")
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        );
+
+}
+
+
+/* =========================================
+   CRC16
+========================================= */
+
+function crc16(str) {
+
+    let crc = 0xFFFF;
+
+
+    for (
+        let i = 0;
+        i < str.length;
+        i++
+    ) {
+
+        crc ^= str.charCodeAt(i) << 8;
+
+
+        for (
+            let j = 0;
+            j < 8;
+            j++
+        ) {
+
+            if (
+                (crc & 0x8000) !== 0
+            ) {
+
+                crc =
+                    (crc << 1) ^
+                    0x1021;
+
+            }
+
+            else {
+
+                crc =
+                    crc << 1;
+
+            }
+
+
+            crc &= 0xFFFF;
+
+        }
+
+    }
+
+
+    return crc
+        .toString(16)
+        .toUpperCase()
+        .padStart(4, "0");
+
+}
+
+
+/* =========================================
+   INICIAR
+========================================= */
+
+atualizar();
+
+</script>
+
+
+</body>
+
+</html>

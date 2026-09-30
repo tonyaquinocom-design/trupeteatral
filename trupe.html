@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trupe Teatral</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    padding: 22px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #080808;
+
+    border-bottom: 1px solid #252525;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 23px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #d4af37;
+}
+
+nav {
+    display: flex;
+
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+
+/* HERO */
+
+.hero {
+
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 7%;
+
+    background:
+        radial-gradient(
+            circle,
+            #252525,
+            #080808 70%
+        );
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero .icone {
+    font-size: 60px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 75px);
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #d4af37;
+}
+
+.hero p {
+    color: #aaa;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* ÁREAS */
+
+.areas {
+
+    padding: 80px 7%;
+
+    background: #0d0d0d;
+}
+
+.titulo {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.titulo pequeno {
+
+    color: #d4af37;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.titulo h2 {
+
+    font-size: 40px;
+
+    margin-top: 12px;
+}
+
+
+.cards {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* CARD */
+
+.card {
+
+    padding: 35px 28px;
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: #d4af37;
+}
+
+.card .icone {
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.card h3 {
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+
+    color: #aaa;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.botao {
+
+    display: inline-block;
+
+    padding: 13px 20px;
+
+    background: #d4af37;
+
+    color: #000;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+}
+
+.botao:hover {
+
+    background: white;
+}
+
+
+/* DESTAQUE */
+
+.destaque {
+
+    padding: 80px 7%;
+
+    background: #111;
+
+    text-align: center;
+}
+
+.destaque h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.destaque p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #aaa;
+
+    line-height: 1.8;
+}
+
+
+/* RODAPÉ */
+
+footer {
+
+    padding: 40px 7%;
+
+    border-top: 1px solid #252525;
+
+    text-align: center;
+
+    color: #777;
+}
+
+footer strong {
+
+    color: #d4af37;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+    nav {
+        display: none;
+    }
+
+    .cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .hero h1 {
+
+        font-size: 50px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- CABEÇALHO -->
+
+<header>
+
+    <div class="logo">
+
+        TRUPE <span>TEATRAL</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Início
+        </a>
+
+        <a href="#programacao">
+            Programação
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="icone">
+            🎭
+        </div>
+
+        <h1>
+
+            Trupe <span>Teatral</span>
+
+        </h1>
+
+        <p>
+
+            Espetáculos, peças teatrais e
+            apresentações que levam arte,
+            cultura e emoção ao público.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- PROGRAMAS -->
+
+<section class="areas" id="programacao">
+
+
+    <div class="titulo">
+
+        <pequeno>
+            CONHEÇA NOSSA PRODUÇÃO
+        </pequeno>
+
+        <h2>
+
+            O universo da Trupe
+
+        </h2>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <!-- ESPETÁCULOS -->
+
+        <div class="card">
+
+            <div class="icone">
+                🎭
+            </div>
+
+            <h3>
+                Espetáculos em Cartaz
+            </h3>
+
+            <p>
+
+                Confira os espetáculos
+                atualmente em cartaz,
+                veja todas as informações
+                e garanta seu ingresso.
+
+            </p>
+
+            <a
+                href="espetaculos.html"
+                class="botao">
+
+                VER ESPETÁCULOS
+
+            </a>
+
+        </div>
+
+
+
+        <!-- NOSSO TRABALHO -->
+
+        <div class="card">
+
+            <div class="icone">
+                🎬
+            </div>
+
+            <h3>
+                Nosso Trabalho
+            </h3>
+
+            <p>
+
+                Conheça nossa trajetória,
+                nossos espetáculos e
+                apresentações realizadas
+                ao longo do tempo.
+
+            </p>
+
+            <a
+                href="trabalho.html"
+                class="botao"
+                onclick="trabalho()">
+
+                CONHECER
+
+            </a>
+
+        </div>
+
+
+
+        <!-- INGRESSOS -->
+
+        <div class="card">
+
+            <div class="icone">
+                🎟️
+            </div>
+
+            <h3>
+                Venda de Ingressos
+            </h3>
+
+            <p>
+
+                Encontre os espetáculos
+                com vendas abertas e
+                compre seu ingresso
+                de forma rápida.
+
+            </p>
+
+            <a
+                href="espetaculo-1.html"
+                class="botao">
+
+                VENDA DE INGRESSOS
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- DESTAQUE -->
+
+<section class="destaque">
+
+    <h2>
+
+        Arte que aproxima.
+
+    </h2>
+
+    <p>
+
+        A Trupe Teatral acredita no poder
+        do teatro e das apresentações
+        para criar experiências,
+        despertar emoções e aproximar
+        pessoas através da arte.
+
+    </p>
+
+</section>
+
+
+
+<!-- RODAPÉ -->
+
+<footer>
+
+    <p>
+
+        <strong>
+            TRUPE TEATRAL
+        </strong>
+
+        © 2026
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Arte • Cultura • Diversão
+
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function espetaculos() {
+
+    alert(
+        "Aqui vamos colocar os espetáculos em cartaz."
+    );
+
+}
+
+
+function trabalho() {
+
+    alert(
+        "Aqui vamos colocar o portfólio da Trupe."
+    );
+
+}
+
+
+function ingressos() {
+
+    alert(
+        "Aqui vamos colocar a venda de ingressos."
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

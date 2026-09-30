@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Os Saltimbancos - Trupe Teatral</title>
+
+<style>
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+
+    padding: 22px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #080808;
+
+    border-bottom: 1px solid #252525;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.logo {
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.logo span {
+
+    color: #d4af37;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+}
+
+
+nav a:hover {
+
+    color: #d4af37;
+
+}
+
+
+/* =========================
+   PRINCIPAL
+========================= */
+
+.evento {
+
+    padding: 70px 7% 90px;
+
+    background: #0d0d0d;
+}
+
+
+.container {
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   CARTAZ
+========================= */
+
+.cartaz {
+
+    min-height: 450px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #292929,
+            #0d0d0d
+        );
+
+    border-radius: 12px;
+
+    border: 1px solid #292929;
+
+    color: #d4af37;
+
+    font-size: 38px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 50px;
+
+}
+
+
+.cartaz span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: 15px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================
+   DATA
+========================= */
+
+.data {
+
+    color: #d4af37;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1 {
+
+    font-size: clamp(
+        45px,
+        7vw,
+        75px
+    );
+
+    line-height: 1;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   SINOPSE
+========================= */
+
+.sinopse {
+
+    color: #bdbdbd;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    max-width: 900px;
+
+    margin-bottom: 45px;
+}
+
+
+.sinopse strong {
+
+    color: white;
+
+}
+
+
+/* =========================
+   DETALHES
+========================= */
+
+.detalhes {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 45px;
+}
+
+
+.detalhe {
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    padding: 28px;
+
+    border-radius: 8px;
+
+}
+
+
+.detalhe strong {
+
+    display: block;
+
+    color: #d4af37;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.detalhe p {
+
+    color: white;
+
+    font-size: 18px;
+
+}
+
+
+/* =========================
+   COMPRA
+========================= */
+
+.compra {
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+    padding: 40px;
+
+    max-width: 700px;
+
+}
+
+
+.compra h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.compra p {
+
+    color: #aaa;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+
+}
+
+
+.preco {
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    color: #d4af37;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.botao {
+
+    display: inline-block;
+
+    padding: 17px 30px;
+
+    background: #d4af37;
+
+    color: #000;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+
+}
+
+
+.botao:hover {
+
+    background: white;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================
+   VOLTAR
+========================= */
+
+.voltar {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+}
+
+
+.voltar:hover {
+
+    color: #d4af37;
+
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+
+    padding: 40px 7%;
+
+    text-align: center;
+
+    border-top: 1px solid #252525;
+
+    color: #777;
+
+}
+
+
+footer strong {
+
+    color: #d4af37;
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 750px) {
+
+    nav {
+
+        display: none;
+
+    }
+
+
+    .detalhes {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .cartaz {
+
+        min-height: 320px;
+
+        font-size: 26px;
+
+    }
+
+
+    .evento {
+
+        padding: 50px 5% 70px;
+
+    }
+
+
+    .compra {
+
+        padding: 28px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header>
+
+
+    <div class="logo">
+
+        TRUPE <span>TEATRAL</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+
+            Início
+
+        </a>
+
+
+        <a href="trupe.html">
+
+            Trupe
+
+        </a>
+
+
+        <a href="espetaculos.html">
+
+            Espetáculos
+
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =========================
+     ESPETÁCULO
+========================= -->
+
+<section class="evento">
+
+
+<div class="container">
+
+
+    <!-- =====================
+         CARTAZ
+    ====================== -->
+
+    <div class="cartaz">
+
+        🎭
+
+        <div>
+
+            OS SALTIMBANCOS
+
+            <span>
+
+                CARTAZ EM BREVE
+
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================
+         DATA
+    ====================== -->
+
+    <div class="data">
+
+        11 OUTUBRO 2026 • 16:00
+
+    </div>
+
+
+
+    <!-- =====================
+         NOME
+    ====================== -->
+
+    <h1>
+
+        OS SALTIMBANCOS
+
+    </h1>
+
+
+
+    <!-- =====================
+         SINOPSE
+    ====================== -->
+
+    <p class="sinopse">
+
+        Unidos contra a exploração realizada por seus
+        patrões, quatro bichanos fogem e rumam à cidade
+        a fim de formar um conjunto musical e iniciar
+        uma carreira artística.
+
+        <br><br>
+
+        Entre apuros e aventuras divertidas e emocionantes,
+        floresce entre eles o verdadeiro valor da amizade
+        para enfrentar as dificuldades.
+
+        <br><br>
+
+        Com interpretações próprias,
+        <strong>“Os Saltimbancos”</strong>
+        é uma obra adaptada por
+        <strong>Tonny Aquino</strong>,
+        com músicas adicionais de
+        <strong>Chico Buarque</strong>.
+
+    </p>
+
+
+
+    <!-- =====================
+         DETALHES
+    ====================== -->
+
+    <div class="detalhes">
+
+
+        <div class="detalhe">
+
+            <strong>
+
+                DATA
+
+            </strong>
+
+            <p>
+
+                11/10/2026
+
+            </p>
+
+        </div>
+
+
+
+        <div class="detalhe">
+
+            <strong>
+
+                HORÁRIO
+
+            </strong>
+
+            <p>
+
+                16h
+
+            </p>
+
+        </div>
+
+
+
+        <div class="detalhe">
+
+            <strong>
+
+                LOCAL
+
+            </strong>
+
+            <p>
+
+                Centro Diocesano
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================
+         COMPRA
+    ====================== -->
+
+    <div class="compra">
+
+
+        <h2>
+
+            Garanta seu ingresso
+
+        </h2>
+
+
+        <p>
+
+            Os ingressos para
+            <strong>Os Saltimbancos</strong>
+            estão disponíveis.
+
+            Escolha seus ingressos e
+            garanta sua presença no espetáculo.
+
+        </p>
+
+
+        <div class="preco">
+
+            R$ 20,00
+
+        </div>
+
+
+        <!-- =====================
+             BOTÃO DE COMPRA
+        ====================== -->
+
+        <a
+            href="comprar.html"
+            class="botao">
+
+            🎟️ COMPRAR INGRESSO
+
+        </a>
+
+
+    </div>
+
+
+
+    <!-- =====================
+         VOLTAR
+    ====================== -->
+
+    <a
+        href="espetaculos.html"
+        class="voltar">
+
+        ← Voltar para espetáculos
+
+    </a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+
+    <p>
+
+        <strong>
+
+            TRUPE TEATRAL
+
+        </strong>
+
+        © 2026
+
+    </p>
+
+
+    <br>
+
+
+    <p>
+
+        Arte • Cultura • Diversão
+
+    </p>
+
+
+</footer>
+
+
+</body>
+
+</html>

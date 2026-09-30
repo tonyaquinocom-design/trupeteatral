@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TchiBum Recreação</title>
+
+<style>
+
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #05070a;
+    color: white;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+
+    padding: 22px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: rgba(5, 7, 10, 0.96);
+
+    border-bottom: 1px solid #18232b;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+
+    color: #168cff;
+}
+
+nav {
+
+    display: flex;
+
+    gap: 28px;
+}
+
+nav a {
+
+    color: #ddd;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+
+    color: #168cff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 520px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 7%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(0, 119, 255, 0.20),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(0, 220, 130, 0.08),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 115, 0, 0.08),
+            transparent 30%
+        ),
+
+        #05070a;
+}
+
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+
+    height: 400px;
+
+    background: #168cff;
+
+    filter: blur(180px);
+
+    opacity: 0.08;
+
+    top: -200px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.hero-content {
+
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero .icone {
+
+    font-size: 70px;
+
+    margin-bottom: 25px;
+
+    filter:
+        drop-shadow(0 0 20px rgba(22, 140, 255, 0.4));
+
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.hero h1 {
+
+    font-size: clamp(45px, 7vw, 78px);
+
+    letter-spacing: -2px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+
+    color: #168cff;
+
+    text-shadow:
+        0 0 25px rgba(22, 140, 255, 0.35);
+}
+
+.hero p {
+
+    color: #999;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    max-width: 760px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+.areas {
+
+    padding: 90px 7%;
+
+    background: #080b0f;
+}
+
+.titulo {
+
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.titulo pequeno {
+
+    color: #168cff;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.titulo h2 {
+
+    font-size: 42px;
+
+    margin-top: 14px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+
+    position: relative;
+
+    padding: 35px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #12171c,
+            #090c10
+        );
+
+    border: 1px solid #1d2932;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: 0.35s;
+}
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: #168cff;
+
+    filter: blur(70px);
+
+    opacity: 0.07;
+
+    top: -50px;
+
+    right: -40px;
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #168cff;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(22, 140, 255, 0.08);
+}
+
+.card .icone {
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.card h3 {
+
+    font-size: 26px;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+
+    color: #999;
+
+    line-height: 1.8;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botao {
+
+    display: inline-block;
+
+    padding: 13px 21px;
+
+    background: #168cff;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 5px 20px rgba(22, 140, 255, 0.18);
+}
+
+.botao:hover {
+
+    background: #35a2ff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CORES DOS CARDS
+========================= */
+
+.card:nth-child(2):hover {
+
+    border-color: #00c878;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(0, 200, 120, 0.08);
+}
+
+.card:nth-child(3):hover {
+
+    border-color: #ff7a00;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(255, 122, 0, 0.08);
+}
+
+.card:nth-child(4):hover {
+
+    border-color: #168cff;
+}
+
+
+/* =========================
+   DESTAQUE
+========================= */
+
+.destaque {
+
+    padding: 100px 7%;
+
+    text-align: center;
+
+    position: relative;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(22, 140, 255, 0.10),
+            transparent 50%
+        ),
+
+        #05070a;
+}
+
+.destaque h2 {
+
+    font-size: 42px;
+
+    margin-bottom: 20px;
+}
+
+.destaque p {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #999;
+
+    line-height: 1.9;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+
+    padding: 45px 7%;
+
+    border-top: 1px solid #18232b;
+
+    text-align: center;
+
+    color: #666;
+
+    background: #030507;
+}
+
+footer strong {
+
+    color: #168cff;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        display: none;
+    }
+
+    .cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .hero {
+
+        min-height: 460px;
+
+        padding: 60px 5%;
+
+    }
+
+    .hero h1 {
+
+        font-size: 50px;
+
+    }
+
+    .hero p {
+
+        font-size: 16px;
+
+    }
+
+    .areas {
+
+        padding: 65px 5%;
+
+    }
+
+    .titulo h2 {
+
+        font-size: 34px;
+
+    }
+
+    .destaque {
+
+        padding: 70px 5%;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header>
+
+    <div class="logo">
+
+        TCHIBUM <span>RECREAÇÃO</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Início
+        </a>
+
+        <a href="tchibum.html">
+            TchiBum
+        </a>
+
+        <!-- NOVO ATALHO -->
+
+        <a href="servicos.html">
+            Serviços
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="icone">
+            🎈
+        </div>
+
+        <h1>
+
+            TchiBum <span>Recreação</span>
+
+        </h1>
+
+        <p>
+
+            Diversão, criatividade e experiências
+            especiais para transformar cada evento
+            em uma lembrança inesquecível.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVIÇOS
+========================= -->
+
+<section class="areas">
+
+
+    <div class="titulo">
+
+        <pequeno>
+            TCHIBUM RECREAÇÃO
+        </pequeno>
+
+        <h2>
+            Nossos serviços
+        </h2>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <!-- SERVIÇOS -->
+
+        <div class="card">
+
+            <div class="icone">
+                🎨
+            </div>
+
+            <h3>
+                Serviços oferecidos
+            </h3>
+
+            <p>
+
+                Pintura facial, recreação,
+                escultura de balões, tererê,
+                personagens, oficinas artísticas
+                e muito mais.
+
+            </p>
+
+            <a
+                href="servicos.html"
+                class="botao">
+
+                CONHECER SERVIÇOS
+
+            </a>
+
+        </div>
+
+
+
+        <!-- EVENTOS -->
+
+        <div class="card">
+
+            <div class="icone">
+                🎉
+            </div>
+
+            <h3>
+                Eventos
+            </h3>
+
+            <p>
+
+                Conheça alguns dos eventos,
+                festas e experiências que já
+                realizamos.
+
+            </p>
+
+            <a
+                href="eventos-tchibum.html"
+                class="botao">
+
+                VER EVENTOS
+
+            </a>
+
+        </div>
+
+
+
+        <!-- ORÇAMENTO -->
+
+        <div class="card">
+
+            <div class="icone">
+                💰
+            </div>
+
+            <h3>
+                Orçamentos
+            </h3>
+
+            <p>
+
+                Conte-nos sobre seu evento e
+                solicite um orçamento personalizado.
+
+            </p>
+
+            <a
+                href="orcamento.html"
+                class="botao">
+
+                SOLICITAR ORÇAMENTO
+
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTATO -->
+
+        <div class="card">
+
+            <div class="icone">
+                📞
+            </div>
+
+            <h3>
+                Contato para contratação
+            </h3>
+
+            <p>
+
+                Entre em contato com a TchiBum
+                e descubra como podemos tornar
+                seu evento ainda mais especial.
+
+            </p>
+
+            <a
+                href="contato-tchibum.html"
+                class="botao">
+
+                ENTRAR EM CONTATO
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     DESTAQUE
+========================= -->
+
+<section class="destaque">
+
+    <h2>
+
+        Seu evento merece mais.
+
+    </h2>
+
+    <p>
+
+        A TchiBum Recreação une criatividade,
+        diversão e profissionalismo para criar
+        experiências especiais em festas,
+        aniversários, eventos e comemorações.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+    <p>
+
+        <strong>
+            TCHIBUM RECREAÇÃO
+        </strong>
+
+        © 2026
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Diversão • Criatividade • Alegria
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Trupe Teatral</title>
+
+<style>
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+
+    width: 100%;
+
+    padding: 22px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #080808;
+
+    border-bottom: 1px solid #252525;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.logo span {
+
+    color: #d4af37;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 25px;
+}
+
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+
+}
+
+
+nav a:hover {
+
+    color: #d4af37;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 7%;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        #252525 0%,
+        #111 35%,
+        #050505 80%
+    );
+
+}
+
+
+.hero-content {
+
+    max-width: 900px;
+
+}
+
+
+.hero pequeno {
+
+    color: #d4af37;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(50px, 8vw, 90px);
+
+    line-height: 1;
+
+    margin: 25px 0;
+
+}
+
+
+.hero h1 span {
+
+    color: #d4af37;
+
+}
+
+
+.hero p {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #bdbdbd;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================
+   ESCOLHA DAS ÁREAS
+========================= */
+
+.escolha {
+
+    padding: 90px 7%;
+
+    background: #0d0d0d;
+
+}
+
+
+.titulo {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+
+.titulo pequeno {
+
+    color: #d4af37;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.titulo h2 {
+
+    font-size: 42px;
+
+    margin-top: 12px;
+
+}
+
+
+.areas {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(2, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* =========================
+   CARTÕES
+========================= */
+
+.area {
+
+    min-height: 420px;
+
+    padding: 45px 35px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+
+}
+
+
+.area:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+/* =========================
+   TRUPE
+========================= */
+
+.trupe {
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #1b1b1b,
+        #080808
+    );
+
+    border: 1px solid #3b3b3b;
+
+}
+
+
+.trupe .icone {
+
+    color: #d4af37;
+
+}
+
+
+/* =========================
+   TCHIBUM
+========================= */
+
+.tchibum {
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #183c4d,
+        #07151c
+    );
+
+    border: 1px solid #256078;
+
+}
+
+
+.tchibum .icone {
+
+    color: #45d9ff;
+
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.icone {
+
+    font-size: 55px;
+
+    margin-bottom: 25px;
+}
+
+
+.area h3 {
+
+    font-size: 32px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.area p {
+
+    color: #c4c4c4;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+
+}
+
+
+.lista {
+
+    list-style: none;
+
+    color: #aaa;
+
+    line-height: 2;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botao {
+
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 14px 25px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+
+}
+
+
+/* BOTÃO TRUPE */
+
+.botao-trupe {
+
+    background: #d4af37;
+
+    color: #000;
+
+}
+
+
+.botao-trupe:hover {
+
+    background: #f0d060;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* BOTÃO TCHIBUM */
+
+.botao-tchibum {
+
+    background: #45d9ff;
+
+    color: #001017;
+
+}
+
+
+.botao-tchibum:hover {
+
+    background: #72e4ff;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+
+    padding: 40px 7%;
+
+    text-align: center;
+
+    border-top: 1px solid #252525;
+
+    color: #777;
+
+}
+
+
+footer strong {
+
+    color: #d4af37;
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 750px) {
+
+    nav {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        min-height: 550px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 52px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 16px;
+
+    }
+
+
+    .areas {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .area {
+
+        min-height: 380px;
+
+    }
+
+
+    .titulo h2 {
+
+        font-size: 32px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header>
+
+    <div class="logo">
+
+        TRUPE <span>TEATRAL</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#inicio">
+            Início
+        </a>
+
+        <a href="#areas">
+            Nossas áreas
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     PRINCIPAL
+========================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <pequeno>
+            ARTE • CULTURA • DIVERSÃO
+        </pequeno>
+
+
+        <h1>
+
+            Trupe <span>Teatral</span>
+
+        </h1>
+
+
+        <p>
+
+            Espetáculos, apresentações, recreação
+            e experiências que transformam momentos
+            em memórias.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ESCOLHA
+========================= -->
+
+<section class="escolha" id="areas">
+
+
+    <div class="titulo">
+
+        <pequeno>
+            CONHEÇA NOSSO TRABALHO
+        </pequeno>
+
+
+        <h2>
+
+            O que você procura?
+
+        </h2>
+
+    </div>
+
+
+
+    <div class="areas">
+
+
+        <!-- =====================
+             TRUPE TEATRAL
+        ====================== -->
+
+        <div class="area trupe">
+
+
+            <div class="icone">
+
+                🎭
+
+            </div>
+
+
+            <h3>
+
+                Trupe Teatral
+
+            </h3>
+
+
+            <p>
+
+                Conheça nossos espetáculos,
+                peças e apresentações.
+
+                Consulte nossa programação
+                e compre seus ingressos.
+
+            </p>
+
+
+            <ul class="lista">
+
+                <li>
+                    🎭 Espetáculos em Cartaz
+                </li>
+
+                <li>
+                    🎬 Nosso Trabalho
+                </li>
+
+                <li>
+                    🎟️ Venda de Ingressos
+                </li>
+
+            </ul>
+
+
+            <a
+                href="trupe.html"
+                class="botao botao-trupe">
+
+                CONHECER A TRUPE
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =====================
+             TCHIBUM
+        ====================== -->
+
+        <div class="area tchibum">
+
+
+            <div class="icone">
+
+                🎈
+
+            </div>
+
+
+            <h3>
+
+                TchiBum Recreação
+
+            </h3>
+
+
+            <p>
+
+                Levamos diversão, criatividade
+                e experiências especiais para
+                festas e eventos.
+
+            </p>
+
+
+            <ul class="lista">
+
+                <li>
+                    🎨 Pintura facial
+                </li>
+
+                <li>
+                    🎈 Escultura de balões
+                </li>
+
+                <li>
+                    🎭 Personagens e recreação
+                </li>
+
+                <li>
+                    🎵 Shows e oficinas
+                </li>
+
+            </ul>
+
+
+            <!-- BOTÃO ATUALIZADO -->
+
+            <a
+                href="tchibum.html"
+                class="botao botao-tchibum">
+
+                CONHECER A TCHIBUM
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+    <p>
+
+        <strong>
+            TRUPE TEATRAL
+        </strong>
+
+        © 2026
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Arte • Cultura • Diversão
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

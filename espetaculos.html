@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Espetáculos em Cartaz - Trupe Teatral</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    padding: 22px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #080808;
+
+    border-bottom: 1px solid #252525;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 23px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #d4af37;
+}
+
+nav {
+    display: flex;
+
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.hero {
+    padding: 80px 7% 60px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #252525,
+            #080808 70%
+        );
+}
+
+.hero .icone {
+    font-size: 55px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 65px);
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #d4af37;
+}
+
+.hero p {
+    color: #aaa;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   ESPETÁCULOS
+========================= */
+
+.eventos {
+    padding: 70px 7%;
+
+    background: #0d0d0d;
+}
+
+.titulo {
+    max-width: 1100px;
+
+    margin: 0 auto 40px;
+}
+
+.titulo pequeno {
+    color: #d4af37;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.titulo h2 {
+    font-size: 36px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.lista-eventos {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+    background: #151515;
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: #d4af37;
+}
+
+
+/* =========================
+   CARTAZ
+========================= */
+
+.cartaz {
+
+    height: 270px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #292929,
+            #0d0d0d
+        );
+
+    color: #d4af37;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.cartaz span {
+    display: block;
+
+    color: #777;
+
+    font-size: 12px;
+
+    margin-top: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.conteudo {
+
+    padding: 25px;
+}
+
+.data {
+
+    color: #d4af37;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.conteudo h3 {
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.local {
+
+    color: #aaa;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+.preco {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.preco strong {
+
+    font-size: 18px;
+}
+
+.botao {
+
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    background: #d4af37;
+
+    color: #000;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+}
+
+.botao:hover {
+
+    background: white;
+}
+
+
+/* =========================
+   AVISO
+========================= */
+
+.aviso {
+
+    max-width: 1100px;
+
+    margin: 50px auto 0;
+
+    padding: 25px;
+
+    background: #111;
+
+    border-left: 3px solid #d4af37;
+
+    color: #999;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+
+    padding: 40px 7%;
+
+    text-align: center;
+
+    border-top: 1px solid #252525;
+
+    color: #777;
+}
+
+footer strong {
+
+    color: #d4af37;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 900px) {
+
+    .lista-eventos {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    nav {
+
+        display: none;
+
+    }
+
+    .lista-eventos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .hero {
+
+        padding: 60px 5%;
+
+    }
+
+    .eventos {
+
+        padding: 60px 5%;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header>
+
+    <div class="logo">
+
+        TRUPE <span>TEATRAL</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Início
+        </a>
+
+        <a href="trupe.html">
+            Trupe Teatral
+        </a>
+
+        <a href="espetaculos.html">
+            Espetáculos
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     TÍTULO
+========================= -->
+
+<section class="hero">
+
+    <div class="icone">
+        🎭
+    </div>
+
+
+    <h1>
+
+        Espetáculos <span>em Cartaz</span>
+
+    </h1>
+
+
+    <p>
+
+        Confira nossas próximas apresentações,
+        conheça cada espetáculo e garanta
+        seu ingresso.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     LISTA DE ESPETÁCULOS
+========================= -->
+
+<section class="eventos">
+
+
+    <div class="titulo">
+
+        <pequeno>
+            PROGRAMAÇÃO
+        </pequeno>
+
+
+        <h2>
+
+            Próximos espetáculos
+
+        </h2>
+
+    </div>
+
+
+
+    <div class="lista-eventos">
+
+
+        <!-- =====================
+             OS SALTIMBANCOS
+        ====================== -->
+
+        <div class="card">
+
+
+            <div class="cartaz">
+
+                🎭
+
+                <div>
+
+                    OS SALTIMBANCOS
+
+                    <span>
+                        CARTAZ EM BREVE
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="conteudo">
+
+
+                <div class="data">
+
+                    11 OUTUBRO 2026 • 16:00
+
+                </div>
+
+
+                <h3>
+
+                    OS SALTIMBANCOS
+
+                </h3>
+
+
+                <div class="local">
+
+                    📍 Centro Diocesano
+
+                    <br>
+
+                    🎟️ Ingressos disponíveis
+
+                </div>
+
+
+                <div class="preco">
+
+                    <strong>
+
+                        R$ 20,00
+
+                    </strong>
+
+
+                    <!-- ATALHO PARA A PÁGINA DO ESPETÁCULO -->
+
+                    <a
+                        href="espetaculo-1.html"
+                        class="botao">
+
+                        VER ESPETÁCULO
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         AVISO
+    ========================== -->
+
+    <div class="aviso">
+
+        <strong>
+            🎟️ Em breve:
+        </strong>
+
+        esta página será conectada ao
+        sistema de venda de ingressos,
+        permitindo escolher a quantidade,
+        realizar o pagamento e receber
+        o ingresso digital com QR Code.
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+    <p>
+
+        <strong>
+            TRUPE TEATRAL
+        </strong>
+
+        © 2026
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Arte • Cultura • Diversão
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

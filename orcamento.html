@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Solicitar Orçamento - TchiBum Recreação</title>
+
+<style>
+
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #05070a;
+    color: white;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+
+    padding: 22px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: rgba(5, 7, 10, 0.96);
+
+    border-bottom: 1px solid #18232b;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+
+    color: #168cff;
+}
+
+nav {
+
+    display: flex;
+
+    gap: 28px;
+}
+
+nav a {
+
+    color: #ddd;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+
+    color: #168cff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    padding: 80px 7% 65px;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(0, 119, 255, 0.20),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(0, 220, 130, 0.08),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 115, 0, 0.08),
+            transparent 30%
+        ),
+
+        #05070a;
+}
+
+.hero .icone {
+
+    font-size: 65px;
+
+    margin-bottom: 20px;
+}
+
+.hero pequeno {
+
+    color: #168cff;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.hero h1 {
+
+    font-size: clamp(
+        42px,
+        7vw,
+        70px
+    );
+
+    margin: 20px 0;
+}
+
+.hero h1 span {
+
+    color: #168cff;
+}
+
+.hero p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #999;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   ÁREA DO FORMULÁRIO
+========================= */
+
+.orcamento {
+
+    padding: 80px 7%;
+
+    background: #080b0f;
+}
+
+.container {
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   INTRODUÇÃO
+========================= */
+
+.introducao {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.introducao h2 {
+
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+.introducao p {
+
+    color: #999;
+
+    line-height: 1.8;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.formulario {
+
+    background:
+        linear-gradient(
+            145deg,
+            #12171c,
+            #090c10
+        );
+
+    border: 1px solid #1d2932;
+
+    border-radius: 12px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   GRUPOS
+========================= */
+
+.linha {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px;
+}
+
+.grupo {
+
+    margin-bottom: 24px;
+}
+
+.grupo label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #ddd;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.grupo label span {
+
+    color: #168cff;
+
+}
+
+.grupo input,
+.grupo select,
+.grupo textarea {
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    background: #07090c;
+
+    border: 1px solid #26343e;
+
+    border-radius: 6px;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.grupo input:focus,
+.grupo select:focus,
+.grupo textarea:focus {
+
+    border-color: #168cff;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(22, 140, 255, 0.10);
+}
+
+.grupo textarea {
+
+    min-height: 140px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+.servicos {
+
+    margin-bottom: 28px;
+}
+
+.servicos-titulo {
+
+    color: #ddd;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.opcoes {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.opcao {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 13px;
+
+    background: #07090c;
+
+    border: 1px solid #26343e;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.opcao:hover {
+
+    border-color: #168cff;
+
+    background: #0b1117;
+}
+
+.opcao input {
+
+    width: 17px;
+
+    height: 17px;
+
+    accent-color: #168cff;
+
+}
+
+.opcao span {
+
+    color: #bbb;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.botao-area {
+
+    margin-top: 10px;
+
+    text-align: center;
+}
+
+.botao {
+
+    display: inline-block;
+
+    width: 100%;
+
+    padding: 16px 25px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #168cff;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 25px
+        rgba(22, 140, 255, 0.18);
+}
+
+.botao:hover {
+
+    background: #35a2ff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   OBSERVAÇÃO
+========================= */
+
+.observacao {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONTATO RÁPIDO
+========================= */
+
+.contato {
+
+    margin-top: 35px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #0d1116;
+
+    border: 1px solid #1d2932;
+
+    border-radius: 10px;
+}
+
+.contato h3 {
+
+    margin-bottom: 10px;
+
+    color: #fff;
+}
+
+.contato p {
+
+    color: #999;
+
+    line-height: 1.7;
+}
+
+.contato strong {
+
+    color: #168cff;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+
+    padding: 45px 7%;
+
+    border-top: 1px solid #18232b;
+
+    text-align: center;
+
+    color: #666;
+
+    background: #030507;
+}
+
+footer strong {
+
+    color: #168cff;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+
+        display: none;
+
+    }
+
+    .hero {
+
+        padding: 60px 5%;
+
+    }
+
+    .hero h1 {
+
+        font-size: 48px;
+
+    }
+
+    .orcamento {
+
+        padding: 60px 5%;
+
+    }
+
+    .formulario {
+
+        padding: 25px;
+
+    }
+
+    .linha {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+    }
+
+    .opcoes {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header>
+
+    <div class="logo">
+
+        TCHIBUM <span>RECREAÇÃO</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Início
+        </a>
+
+        <a href="tchibum.html">
+            TchiBum
+        </a>
+
+        <a href="servicos.html">
+            Serviços
+        </a>
+
+        <a href="eventos-tchibum.html">
+            Eventos
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="icone">
+        💰
+    </div>
+
+
+    <pequeno>
+        TCHIBUM RECREAÇÃO
+    </pequeno>
+
+
+    <h1>
+
+        Solicite seu <span>Orçamento</span>
+
+    </h1>
+
+
+    <p>
+
+        Conte para nós como será o seu evento
+        e vamos preparar uma proposta especial
+        para você.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     FORMULÁRIO
+========================= -->
+
+<section class="orcamento">
+
+
+<div class="container">
+
+
+    <div class="introducao">
+
+        <h2>
+
+            Vamos planejar juntos?
+
+        </h2>
+
+        <p>
+
+            Preencha as informações abaixo.
+            Quanto mais detalhes você fornecer,
+            melhor poderemos preparar uma proposta
+            para o seu evento.
+
+        </p>
+
+    </div>
+
+
+
+    <form
+        class="formulario"
+        onsubmit="enviarOrcamento(event)">
+
+
+        <!-- =====================
+             DADOS DO CLIENTE
+        ====================== -->
+
+        <div class="linha">
+
+
+            <div class="grupo">
+
+                <label>
+                    Nome <span>*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Seu nome"
+                    required>
+
+            </div>
+
+
+
+            <div class="grupo">
+
+                <label>
+                    Telefone / WhatsApp <span>*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    id="telefone"
+                    placeholder="(77) 99999-9999"
+                    required>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="grupo">
+
+            <label>
+                E-mail
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="seuemail@email.com">
+
+        </div>
+
+
+
+        <!-- =====================
+             DADOS DO EVENTO
+        ====================== -->
+
+        <div class="linha">
+
+
+            <div class="grupo">
+
+                <label>
+                    Data do evento <span>*</span>
+                </label>
+
+                <input
+                    type="date"
+                    id="data"
+                    required>
+
+            </div>
+
+
+
+            <div class="grupo">
+
+                <label>
+                    Horário
+                </label>
+
+                <input
+                    type="time"
+                    id="horario">
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="linha">
+
+
+            <div class="grupo">
+
+                <label>
+                    Tipo de evento <span>*</span>
+                </label>
+
+                <select
+                    id="tipo"
+                    required>
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option>
+                        Aniversário infantil
+                    </option>
+
+                    <option>
+                        Festa escolar
+                    </option>
+
+                    <option>
+                        Evento empresarial
+                    </option>
+
+                    <option>
+                        Festa particular
+                    </option>
+
+                    <option>
+                        Evento público
+                    </option>
+
+                    <option>
+                        Casamento
+                    </option>
+
+                    <option>
+                        Outro
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="grupo">
+
+                <label>
+                    Quantidade aproximada de crianças
+                </label>
+
+                <input
+                    type="number"
+                    id="criancas"
+                    min="1"
+                    placeholder="Ex.: 30">
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="grupo">
+
+            <label>
+                Local do evento <span>*</span>
+            </label>
+
+            <input
+                type="text"
+                id="local"
+                placeholder="Cidade, bairro ou endereço"
+                required>
+
+        </div>
+
+
+
+        <!-- =====================
+             SERVIÇOS
+        ====================== -->
+
+        <div class="servicos">
+
+            <div class="servicos-titulo">
+
+                Quais serviços você deseja?
+
+            </div>
+
+
+            <div class="opcoes">
+
+
+                <label class="opcao">
+
+                    <input
+                        type="checkbox"
+                        name="servico"
+                        value="Jogos e Brincadeiras">
+
+                    <span>
+                        🎉 Jogos e Brincadeiras
+                    </span>
+
+                </label>
+
+
+
+                <label class="opcao">
+
+                    <input
+                        type="checkbox"
+                        name="servico"
+                        value="Pinta Cara">
+
+                    <span>
+                        🎨 Pinta Cara
+                    </span>
+
+                </label>
+
+
+
+                <label class="opcao">
+
+                    <input
+                        type="checkbox"
+                        name="servico"
+                        value="Escultura de Balões">
+
+                    <span>
+                        🎈 Escultura de Balões
+                    </span>
+
+                </label>
+
+
+
+                <label class="opcao">
+
+                    <input
+                        type="checkbox"
+                        name="servico"
+                        value="Tererê">
+
+                    <span>
+                        🌈 Tererê
+                    </span>
+
+                </label>
+
+
+
+                <label class="opcao">
+
+                    <input
+                        type="checkbox"
+                        name="servico"
+                        value="Oficinas de Artes">
+
+                    <span>
+                        ✂️ Oficinas de Artes
+                    </span>
+
+                </label>
+
+
+
+                <label class="opcao">
+
+                    <input
+                        type="checkbox"
+                        name="servico"
+                        value="Personagens">
+
+                    <span>
+                        🦸 Personagens
+                    </span>
+
+                </label>
+
+
+
+                <label class="opcao">
+
+                    <input
+                        type="checkbox"
+                        name="servico"
+                        value="Show Musical">
+
+                    <span>
+                        🎵 Show Musical
+                    </span>
+
+                </label>
+
+
+
+                <label class="opcao">
+
+                    <input
+                        type="checkbox"
+                        name="servico"
+                        value="Outro">
+
+                    <span>
+                        ⭐ Outro
+                    </span>
+
+                </label>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================
+             DETALHES
+        ====================== -->
+
+        <div class="grupo">
+
+            <label>
+
+                Conte mais sobre o seu evento
+
+            </label>
+
+
+            <textarea
+                id="mensagem"
+                placeholder="Conte-nos detalhes importantes, quantidade de convidados, idade das crianças, tema da festa e outras informações..."></textarea>
+
+        </div>
+
+
+
+        <!-- =====================
+             BOTÃO
+        ====================== -->
+
+        <div class="botao-area">
+
+            <button
+                type="submit"
+                class="botao">
+
+                SOLICITAR ORÇAMENTO
+
+            </button>
+
+        </div>
+
+
+        <div class="observacao">
+
+            Ao clicar no botão, os dados serão
+            organizados para envio pelo WhatsApp
+            da TchiBum Recreação.
+
+        </div>
+
+
+    </form>
+
+
+
+    <!-- =====================
+         CONTATO
+    ====================== -->
+
+    <div class="contato">
+
+        <h3>
+
+            Prefere falar diretamente conosco?
+
+        </h3>
+
+
+        <p>
+
+            Entre em contato pelo WhatsApp:
+
+            <br><br>
+
+            <strong>
+                (77) 99821-2971
+            </strong>
+
+            <br><br>
+
+            Instagram:
+
+            <br>
+
+            <strong>
+                @tchibum_recreacao
+            </strong>
+
+        </p>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+    <p>
+
+        <strong>
+            TCHIBUM RECREAÇÃO
+        </strong>
+
+        © 2026
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Diversão • Criatividade • Alegria
+
+    </p>
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   ENVIO DO ORÇAMENTO
+========================= */
+
+function enviarOrcamento(event) {
+
+    event.preventDefault();
+
+
+    const nome =
+        document.getElementById("nome").value;
+
+    const telefone =
+        document.getElementById("telefone").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const data =
+        document.getElementById("data").value;
+
+    const horario =
+        document.getElementById("horario").value;
+
+    const tipo =
+        document.getElementById("tipo").value;
+
+    const criancas =
+        document.getElementById("criancas").value;
+
+    const local =
+        document.getElementById("local").value;
+
+    const mensagem =
+        document.getElementById("mensagem").value;
+
+
+    /* SERVIÇOS SELECIONADOS */
+
+    const selecionados =
+        document.querySelectorAll(
+            'input[name="servico"]:checked'
+        );
+
+
+    let servicos = [];
+
+
+    selecionados.forEach(function(item) {
+
+        servicos.push(item.value);
+
+    });
+
+
+    if (servicos.length === 0) {
+
+        servicos.push(
+            "Não informado"
+        );
+
+    }
+
+
+    /* =========================
+       MONTAR MENSAGEM
+    ========================= */
+
+    let texto =
+
+        "Olá! Gostaria de solicitar um orçamento da TchiBum Recreação.%0A%0A" +
+
+        "*DADOS DO CLIENTE*%0A" +
+
+        "Nome: " + nome + "%0A" +
+
+        "Telefone: " + telefone + "%0A" +
+
+        "E-mail: " + email + "%0A%0A" +
+
+        "*DADOS DO EVENTO*%0A" +
+
+        "Data: " + data + "%0A" +
+
+        "Horário: " + horario + "%0A" +
+
+        "Tipo de evento: " + tipo + "%0A" +
+
+        "Quantidade de crianças: " + criancas + "%0A" +
+
+        "Local: " + local + "%0A%0A" +
+
+        "*SERVIÇOS DESEJADOS*%0A" +
+
+        servicos.join(", ") +
+
+        "%0A%0A" +
+
+        "*DETALHES DO EVENTO*%0A" +
+
+        mensagem;
+
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    const numero =
+        "5577998212971";
+
+
+    const url =
+        "https://wa.me/" +
+        numero +
+        "?text=" +
+        texto;
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

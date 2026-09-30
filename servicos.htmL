@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Serviços | TchiBum Recreação</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #05070a;
+    color: white;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+
+    padding: 22px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: rgba(5, 7, 10, 0.96);
+
+    border-bottom: 1px solid #18232b;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #168cff;
+}
+
+nav {
+
+    display: flex;
+
+    gap: 28px;
+}
+
+nav a {
+
+    color: #ddd;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #168cff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 430px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 7%;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(22, 140, 255, 0.20),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(0, 200, 120, 0.08),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 122, 0, 0.08),
+            transparent 30%
+        ),
+
+        #05070a;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero .icone {
+
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(22, 140, 255, 0.4)
+        );
+}
+
+.hero h1 {
+
+    font-size: clamp(42px, 6vw, 68px);
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #168cff;
+}
+
+.hero p {
+
+    color: #999;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+.servicos {
+
+    padding: 90px 7%;
+
+    background: #080b0f;
+}
+
+.titulo {
+
+    max-width: 900px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.titulo pequeno {
+
+    color: #168cff;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.titulo h2 {
+
+    font-size: 40px;
+
+    margin-top: 12px;
+}
+
+.titulo p {
+
+    max-width: 700px;
+
+    margin: 18px auto 0;
+
+    color: #888;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.lista-servicos {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #12171c,
+            #090c10
+        );
+
+    border: 1px solid #1d2932;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition: 0.35s;
+
+    position: relative;
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #168cff;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.5),
+        0 0 30px rgba(22,140,255,0.10);
+}
+
+
+/* =========================
+   FOTO
+========================= */
+
+.foto {
+
+    height: 230px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 65px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #17212b,
+            #080b0f
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.foto::after {
+
+    content: "TCHIBUM";
+
+    position: absolute;
+
+    bottom: 12px;
+
+    right: 15px;
+
+    color: rgba(255,255,255,0.15);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo {
+
+    padding: 25px;
+}
+
+.conteudo h3 {
+
+    font-size: 24px;
+
+    margin-bottom: 12px;
+}
+
+.conteudo p {
+
+    color: #999;
+
+    line-height: 1.7;
+
+    min-height: 82px;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.botao {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 13px 20px;
+
+    background: #168cff;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 12px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+
+    background: #35a2ff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CORES
+========================= */
+
+.card:nth-child(2):hover {
+    border-color: #00c878;
+}
+
+.card:nth-child(3):hover {
+    border-color: #ff7a00;
+}
+
+.card:nth-child(4):hover {
+    border-color: #00c878;
+}
+
+.card:nth-child(5):hover {
+    border-color: #ff7a00;
+}
+
+.card:nth-child(6):hover {
+    border-color: #168cff;
+}
+
+
+/* =========================
+   INSTAGRAM
+========================= */
+
+.instagram {
+
+    padding: 100px 7%;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 50%,
+            rgba(22,140,255,0.10),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(255,122,0,0.07),
+            transparent 35%
+        ),
+
+        #05070a;
+}
+
+.instagram::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: #168cff;
+
+    filter: blur(150px);
+
+    opacity: 0.06;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.instagram-conteudo {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.instagram-icone {
+
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(255,122,0,0.25)
+        );
+}
+
+.instagram pequeno {
+
+    color: #ff7a00;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.instagram h2 {
+
+    font-size: 42px;
+
+    margin-top: 12px;
+
+    margin-bottom: 20px;
+}
+
+.instagram h2 span {
+
+    color: #168cff;
+}
+
+.instagram p {
+
+    max-width: 680px;
+
+    margin: auto;
+
+    color: #999;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   ÁREA PREPARADA PARA FEED
+========================= */
+
+.instagram-feed {
+
+    max-width: 1000px;
+
+    margin: 45px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.instagram-item {
+
+    min-height: 180px;
+
+    border-radius: 12px;
+
+    border: 1px solid #1d2932;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #12171c,
+            #080b0f
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 42px;
+
+    transition: 0.3s;
+}
+
+.instagram-item:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #168cff;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.4);
+}
+
+.instagram-item:nth-child(2):hover {
+
+    border-color: #00c878;
+}
+
+.instagram-item:nth-child(3):hover {
+
+    border-color: #ff7a00;
+}
+
+
+/* =========================
+   BOTÃO INSTAGRAM
+========================= */
+
+.botao-instagram {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 15px 28px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #168cff,
+            #7b4dff,
+            #ff7a00
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    letter-spacing: 0.5px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 30px rgba(22,140,255,0.15);
+}
+
+.botao-instagram:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(255,122,0,0.18);
+}
+
+.instagram-usuario {
+
+    margin-top: 15px;
+
+    color: #168cff;
+
+    font-weight: bold;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   ORÇAMENTO
+========================= */
+
+.destaque {
+
+    padding: 100px 7%;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(22,140,255,0.12),
+            transparent 50%
+        ),
+
+        #05070a;
+}
+
+.destaque h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.destaque p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #999;
+
+    line-height: 1.8;
+}
+
+.botao-destaque {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 15px 25px;
+
+    background: #ff7a00;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.botao-destaque:hover {
+
+    background: #ff9635;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+
+    padding: 45px 7%;
+
+    text-align: center;
+
+    color: #666;
+
+    background: #030507;
+
+    border-top: 1px solid #18232b;
+}
+
+footer strong {
+    color: #168cff;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 900px) {
+
+    .lista-servicos {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .instagram-feed {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    nav {
+        display: none;
+    }
+
+    .lista-servicos {
+
+        grid-template-columns: 1fr;
+    }
+
+    .instagram-feed {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+
+        padding: 60px 5%;
+    }
+
+    .servicos {
+
+        padding: 65px 5%;
+    }
+
+    .instagram {
+
+        padding: 70px 5%;
+    }
+
+    .instagram h2 {
+
+        font-size: 34px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header>
+
+    <div class="logo">
+
+        TCHIBUM <span>RECREAÇÃO</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Início
+        </a>
+
+        <a href="tchibum.html">
+            TchiBum
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="icone">
+            🎈
+        </div>
+
+        <h1>
+
+            Nossos <span>Serviços</span>
+
+        </h1>
+
+        <p>
+
+            Diversão, criatividade e experiências
+            especiais para transformar cada evento
+            em momentos inesquecíveis.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVIÇOS
+========================= -->
+
+<section class="servicos">
+
+
+    <div class="titulo">
+
+        <pequeno>
+            TCHIBUM RECREAÇÃO
+        </pequeno>
+
+        <h2>
+
+            Escolha sua diversão
+
+        </h2>
+
+        <p>
+
+            Conheça nossas atividades e descubra
+            as opções perfeitas para tornar seu
+            evento ainda mais especial.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="lista-servicos">
+
+
+        <!-- JOGOS -->
+
+        <div class="card">
+
+            <div class="foto">
+                🎉
+            </div>
+
+            <div class="conteudo">
+
+                <h3>
+                    Jogos e Brincadeiras
+                </h3>
+
+                <p>
+
+                    Atividades animadas, dinâmicas
+                    e cheias de interação para
+                    gastar energia e criar memórias
+                    incríveis.
+
+                </p>
+
+                <a
+                    href="jogos-brincadeiras.html"
+                    class="botao">
+
+                    VER SERVIÇO
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PINTA CARA -->
+
+        <div class="card">
+
+            <div class="foto">
+                🎨
+            </div>
+
+            <div class="conteudo">
+
+                <h3>
+                    Pinta Cara
+                </h3>
+
+                <p>
+
+                    Super-heróis, princesas,
+                    bichinhos e personagens.
+                    A imaginação ganha vida!
+
+                </p>
+
+                <a
+                    href="pinta-cara.html"
+                    class="botao">
+
+                    VER SERVIÇO
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BALÕES -->
+
+        <div class="card">
+
+            <div class="foto">
+                🎈
+            </div>
+
+            <div class="conteudo">
+
+                <h3>
+                    Escultura de Balões
+                </h3>
+
+                <p>
+
+                    Espadas, flores, cachorrinhos,
+                    coroas e muitas outras criações
+                    feitas com balões.
+
+                </p>
+
+                <a
+                    href="escultura-baloes.html"
+                    class="botao">
+
+                    VER SERVIÇO
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TERERÊ -->
+
+        <div class="card">
+
+            <div class="foto">
+                🌈
+            </div>
+
+            <div class="conteudo">
+
+                <h3>
+                    Tererê
+                </h3>
+
+                <p>
+
+                    Cabelos coloridos, estilosos
+                    e cheios de personalidade
+                    para deixar a festa ainda mais especial.
+
+                </p>
+
+                <a
+                    href="terere.html"
+                    class="botao">
+
+                    VER SERVIÇO
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OFICINAS -->
+
+        <div class="card">
+
+            <div class="foto">
+                ✂️
+            </div>
+
+            <div class="conteudo">
+
+                <h3>
+                    Oficinas de Artes
+                </h3>
+
+                <p>
+
+                    Criatividade solta, mão na massa
+                    e lembrancinhas feitas pelas
+                    próprias crianças.
+
+                </p>
+
+                <a
+                    href="oficinas-artes.html"
+                    class="botao">
+
+                    VER SERVIÇO
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PERSONAGENS -->
+
+        <div class="card">
+
+            <div class="foto">
+                🦸
+            </div>
+
+            <div class="conteudo">
+
+                <h3>
+                    Personagens
+                </h3>
+
+                <p>
+
+                    A magia entra no evento!
+                    Personagens que encantam,
+                    interagem e fazem os olhos brilharem.
+
+                </p>
+
+                <a
+                    href="personagens.html"
+                    class="botao">
+
+                    VER SERVIÇO
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INSTAGRAM
+========================= -->
+
+<section class="instagram">
+
+    <div class="instagram-conteudo">
+
+        <div class="instagram-icone">
+            📸
+        </div>
+
+        <pequeno>
+            ACOMPANHE A TCHIBUM
+        </pequeno>
+
+        <h2>
+
+            Momentos <span>TchiBum</span>
+
+        </h2>
+
+        <p>
+
+            Veja nossos eventos, brincadeiras,
+            personagens, oficinas e muitos
+            momentos especiais vividos com a
+            criançada.
+
+        </p>
+
+
+        <!-- ÁREA RESERVADA PARA O FEED -->
+
+        <div class="instagram-feed">
+
+            <div class="instagram-item">
+                🎈
+            </div>
+
+            <div class="instagram-item">
+                🎨
+            </div>
+
+            <div class="instagram-item">
+                🎉
+            </div>
+
+        </div>
+
+
+        <div class="instagram-usuario">
+
+            @tchibum_recreacao
+
+        </div>
+
+
+        <a
+            href="https://www.instagram.com/tchibum_recreacao/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="botao-instagram">
+
+            📱 VER NO INSTAGRAM
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ORÇAMENTO
+========================= -->
+
+<section class="destaque">
+
+    <h2>
+
+        Gostou de algum serviço?
+
+    </h2>
+
+    <p>
+
+        Conte para a TchiBum sobre seu evento.
+        Podemos montar uma proposta personalizada
+        para você.
+
+    </p>
+
+
+    <a
+        href="orcamento.html"
+        class="botao-destaque">
+
+        SOLICITAR ORÇAMENTO
+
+    </a>
+
+</section>
+
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+    <p>
+
+        <strong>
+            TCHIBUM RECREAÇÃO
+        </strong>
+
+        © 2026
+
+    </p>
+
+    <br>
+
+    <p>
+
+        Diversão • Criatividade • Alegria
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
